@@ -32,14 +32,6 @@ bcrypt.init_app(app)
 jwt = JWTManager(app)
 
 migrate = Migrate(app, db)
-
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
-
-login_manager.login_view = "login"
-
-
 ########################## LOGIN LOGOUT ###########################
 @app.route('/', methods=['POST'])
 @cross_origin(origin='http://localhost:5173', supports_credentials=True)
