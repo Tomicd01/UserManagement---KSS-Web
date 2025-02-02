@@ -11,7 +11,7 @@ import EditProduct from '../views/EditProduct.vue';
 import EditOrder from '../views/EditOrder.vue';
 
 const routes = [
-    { path: '/', component: Home, meta: { requiresAuth: true } },
+    { path: '/', component: Home },
     { path: '/users', component: Users, meta: { requiresAuth: true } },
     { path: '/add-user', component: AddUser, meta: { requiresAuth: true }},
     { path: '/products', component: Products, meta: { requiresAuth: true } },
