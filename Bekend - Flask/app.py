@@ -2,10 +2,8 @@ from flask import Flask, render_template, Blueprint, redirect, url_for, request,
 from config import Config
 from extensions import db, login_manager, bcrypt
 from flask_migrate import Migrate
-from flask_login import login_user, logout_user, login_required, current_user
 from controllers.user import add_user_function, edit_user_function, delete_user_function
 from flask_jwt_extended import JWTManager, create_access_token, get_jwt_identity, jwt_required, unset_jwt_cookies, get_jwt
-import sys
 from models.user import User
 from models.product import Product
 from models.order import Order
