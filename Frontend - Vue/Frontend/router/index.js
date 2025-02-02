@@ -29,11 +29,11 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    const isAuthenticated = !!localStorage.getItem("access_token"); // Provera tokena
-    const userRole = localStorage.getItem("user_role"); // Dobijanje uloge
+    const isAuthenticated = !!localStorage.getItem("access_token"); 
+    const userRole = localStorage.getItem("user_role"); 
 
     if (to.meta.requiresAuth && !isAuthenticated) {
-        if (to.path !== "/") {  // ❗ Sprečava beskonačno preusmeravanje
+        if (to.path !== "/") {  // sprečava beskonačno preusmeravanje
             next('/'); 
         } else {
             next(); // Ako je već na login stranici, dozvoli prikaz
